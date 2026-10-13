@@ -1,3 +1,5 @@
+body{ margin: 0; }
+
 ul{ list-style-type: none; margin: 0; padding: 0; overflow: hidden; }
 
 .navbar__logo a{ color: white; text-decoration: none; font-size: 26px; font-weight: bold; }
