@@ -1,4 +1,25 @@
- {% extends "index.html" %}
- {% block section %}
- This is the page that shows register item.
- {% endblock section %}
+{% extends "index.html" %}
+
+{% block section %}
+
+<form>
+    Product name: <input type="text" name="product_name"><br>
+    Seller ID: <input type="text" name="seller_id"><br>
+    Address: <input type="text" name="address"><br>
+    Price: <input type="number" name="price"><br>
+
+    Status?<br>
+    <select name="status">
+        <option>Likely New</option>
+        <option>Used</option>
+    </select><br>
+
+    Email: <input type="email" name="email"><br>
+
+    Representative Image upload :
+    <input type="file" name="picture"><br>
+
+    <input type="submit" value="Submit!">
+</form>
+
+{% endblock section %}
