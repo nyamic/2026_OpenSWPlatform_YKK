@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -21,6 +21,20 @@ def register_items():
 @app.route('/register-reviews')
 def register_reviews():
     return render_template('reg_reviews.html')
+
+@app.route("/submit_item")
+def reg_item_submit():
+    name=request.args.get("name")
+    status=request.args.get("status")
+    return "Input name:" + name + " input status:" + status
+
+@app.route("/submit_item_post", methods=["POST"])
+def reg_item_submit_post():
+        image_file=request.files["picture"]
+        image_file.save("static/images/{}".format(image_file.filename))
+        data=request.form
+        return render_template("result.html", data=data,
+                               img_path="static/images/{}".format(image_file.filename))
 
 if __name__ == '__main__':
     app.run(debug=True)

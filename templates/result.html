@@ -1,0 +1,36 @@
+{% extends "index.html" %}
+
+{% block section %}
+
+<h2>Item Registration Result</h2>
+
+<p>
+    Item name: {{ data['product_name'] }} is registered.
+</p>
+
+<p>Seller ID: {{ data['seller_id'] }}</p>
+
+<p>Address: {{ data['address'] }}</p>
+
+<p>Price: {{ data['price'] }}</p>
+
+<p>
+    Status:
+    {% if data['status'] == "Likely New" %}
+        Likely New
+    {% elif data['status'] == "Used" %}
+        Used
+    {% endif %}
+</p>
+
+<p>Email: {{ data['email'] }}</p>
+
+{% if img_path %}
+    <p>Representative Image:</p>
+    <img src="{{ img_path }}"
+         alt="상품 이미지"
+         style="width: 200px; height: auto;">
+{% endif %}
+
+{% endblock section %}
+```
