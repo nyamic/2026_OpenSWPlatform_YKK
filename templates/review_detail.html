@@ -1,4 +1,8 @@
-{% include 'header.html' %}
+{% extends "index.html" %}
+
+{% block section %}
+
+{% include 'common/header.html' %}
 
 <main class="page-background review-detail-page">
   <section class="review-detail-container">
@@ -114,4 +118,6 @@
   </section>
 </main>
 
-{% include 'footer.html' %}
+{% include 'common/footer.html' %}
+
+{% endblock section %}
